@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>AutoIncorrect</title>
+        <meta name="description" content="Automatic Typos to save you time!" />
+        <meta name="author" content="Jacob Wicks" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1 class="header header--big">AutoIncorrect</h1>
+        <div class="settings"></div>
+        <br />
+        <button id="addTyposButton">GO!</button>
+        <div class="centering-div">
+            <div class="container">
+                <div class="big__character__display">
+                    <div class="current__input">
+                        <span
+                            class="keyboard__key keyboard__key--big"
+                            id="currentInputSpan"
+                            >&nbsp;
+                        </span>
+                        <span class="big" id="arrow">🡆</span>
+                        <span
+                            class="keyboard__key keyboard__key--big"
+                            id="currentOutputSpan"
+                            >&nbsp;</span
+                        >
+                    </div>
+                </div>
+                <br />
+                <div class="keyboard"></div>
+            </div>
+            <div class="input__output__container">
+                <div class="left__side">
+                    <div class="input__container">
+                        <h3 class="header">Input</h3>
+                        <div class="backdrop">
+                            <div class="highlights">
+                                <!-- cloned text with <mark> tags here -->
+                            </div>
+                        </div>
+                        <textarea id="inputTextarea"></textarea>
+                    </div>
+                </div>
+                <div class="right__side">
+                    <h3 class="header">Output</h3>
+                    <div class="output"></div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="setup.js"></script>
+    </body>
+</html>

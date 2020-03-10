@@ -1,0 +1,131 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 30px;
+}
+/* The div that centers the content */
+.centering-div {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    text-decoration: underline;
+}
+
+/* the graphical representation of the keyboard
+    it will contain the rows
+    and the rows will contain keys
+*/
+.keyboard {
+    background-color: #f0f0f0;
+    border: 1px black solid;
+    width: 425px;
+    height: 169px;
+}
+
+/* a keyboard row contains a row of keys */
+.keyboard__row {
+    width: 425px;
+    border: solid black 1px;
+}
+/* the keyboard blanks take up space to represent keys we are not modelling */
+.keyboard__blank {
+    border-style: outset;
+    height: 25px;
+    display: inline-block;
+}
+
+/* a keyboard key displays a single letter 
+    it will appear in the keyboard
+    but also in the big display of inputs
+*/
+.keyboard__key {
+    border-style: outset;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+}
+
+/* big keyboard keys are used to show the current character */
+.keyboard__key--big {
+    width: 100px;
+    height: 100px;
+    font-size: 6em;
+}
+
+.big {
+    font-size: 6em;
+}
+
+.keyboard__spacebar {
+    border-style: outset;
+    display: inline-block;
+    height: 25px;
+    width: 125px;
+    text-align: center;
+    margin-left: 115px;
+}
+/* key is highlighted */
+.highlighted {
+    background-color: #39ff14;
+}
+
+/* the key is a mistake, so it is red */
+.mistake {
+    background-color: red;
+}
+
+.output {
+    border: solid black 1px;
+    height: 300;
+}
+.backdrop {
+    position: absolute;
+    z-index: 1;
+    border: 2px solid #685972;
+    background-color: #fff;
+    overflow: auto;
+    pointer-events: none;
+    transition: transform 1s;
+}
+
+.backdrop,
+textarea {
+    width: 460px;
+    height: 180px;
+}
+
+.highlights,
+textarea {
+    padding: 10px;
+    font: 20px/28px 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* remove styles from textarea to ensure cross browswer rendering is same
+This allows us to position the fake cursor correctly */
+textarea {
+    display: block;
+    z-index: 2;
+    margin: 0;
+    border: 2px solid #74637f;
+    border-radius: 0;
+    color: #444;
+    background-color: transparent;
+    overflow: auto;
+    resize: none;
+}
+
+mark {
+    border-radius: 3px;
+    color: transparent;
+    background-color: #b1d5e5;
+}
+
+.highlights {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: transparent;
+}

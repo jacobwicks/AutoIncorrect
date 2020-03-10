@@ -1,0 +1,366 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 30px;
+    background-color: #404040;
+}
+/* The div that centers the content */
+.centering-div {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The headers will be on a green background */
+.header {
+    margin: 30px auto 0;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #50b818;
+    display: inline-block;
+}
+
+/* underline the big header */
+.header--big {
+    position: absolute;
+    text-decoration: underline;
+    top: 5%;
+}
+
+/* the settings container div */
+.settings {
+    position: absolute;
+    top: 150px;
+    border: none;
+    border-radius: 6px;
+    background-color: #50b818;
+    padding-left: 10px;
+}
+
+/* the graphical representation of the keyboard
+    it will contain the rows
+    and the rows will contain keys
+*/
+.keyboard {
+    background-color: #c0c0c0;
+    border: 1px black solid;
+    width: 425px;
+    height: 169px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* a keyboard row contains a row of keys */
+.keyboard__row {
+    width: 425px;
+    border: solid black 1px;
+}
+/* the keyboard blanks take up space to represent keys we are not modelling */
+.keyboard__blank {
+    border-style: outset;
+    height: 25px;
+    display: inline-block;
+}
+
+/* a keyboard key displays a single letter 
+    it will appear in the keyboard
+    but also in the big display of inputs
+*/
+.keyboard__key {
+    border-style: outset;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+}
+
+/* the big character display div holds the current input character and current output character displays */
+.big__character__display {
+    text-align: center;
+}
+
+/* big keyboard keys are used to show the current character */
+.keyboard__key--big {
+    width: 120px;
+    height: 120px;
+    font-size: 6em;
+    background-color: #c0c0c0;
+}
+
+/* the big arrow */
+.big {
+    font-size: 6em;
+}
+
+/* the spacebar is one long key */
+.keyboard__spacebar {
+    border-style: outset;
+    display: inline-block;
+    height: 25px;
+    width: 125px;
+    text-align: center;
+    margin-left: 115px;
+}
+
+/* key is highlighted */
+.highlighted {
+    background-color: #39ff14;
+}
+
+/* the key is a mistake, so it is red */
+.mistake {
+    background-color: red;
+}
+
+.output {
+    display: block;
+    position: absolute;
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: #444;
+    background-color: white;
+    overflow: auto;
+    resize: none;
+}
+
+/* the backdrop div sits behind the input textarea
+    We put mark elements inside it to fake like we have a cursor in the textarea*/
+.backdrop {
+    position: absolute;
+    z-index: 1;
+    border: 2px solid #50b818;
+    background-color: #fff;
+    overflow: auto;
+    pointer-events: none;
+}
+
+/* dimensions of the textarea and backdrop must be the same
+    so that they overlap completely
+    output should match for aesthetics
+*/
+.backdrop,
+textarea,
+.output {
+    width: 350px;
+    height: 180px;
+}
+
+.highlights,
+textarea {
+    padding: 10px;
+    letter-spacing: 1px;
+}
+
+/* remove styles from textarea to ensure cross browswer rendering is same
+This allows us to position the fake cursor correctly */
+textarea {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    border: 2px solid black;
+    border-radius: 0;
+    color: #444;
+    background-color: transparent;
+    overflow: auto;
+    resize: none;
+}
+
+/* the mark element is used for highlighting text
+    We use it to simulate a computor cursor*/
+mark {
+    border-radius: 3px;
+    color: black;
+    background-color: #39ff14;
+}
+
+.mark__mistake {
+    background-color: red;
+}
+
+.highlights {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: transparent;
+}
+
+.backdrop,
+textarea {
+    box-sizing: border-box;
+}
+
+.input__container,
+.backdrop,
+textarea {
+    width: 350px;
+    height: 180px;
+}
+
+.highlights,
+textarea,
+.output {
+    padding: 10px;
+    font: 20px/28px 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+.input__container {
+    display: block;
+    margin: 0 auto;
+}
+
+.highlights {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: transparent;
+}
+
+.title__settings__container {
+    width: 700px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+}
+.input__output__container {
+    width: 700px;
+    height: 250px;
+    margin: auto;
+    padding: 10px;
+}
+
+.left__side {
+    width: 48%;
+    height: 200px;
+    float: left;
+}
+
+.right__side {
+    margin-left: 52%;
+    height: 200px;
+}
+
+button {
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    font-size: 3em;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    background-color: #50b818;
+}
+
+/* slider */
+.slider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 25px;
+    background: #c0c0c0;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+/* darken (less transparent) when hovered */
+.slider:hover {
+    opacity: 1;
+}
+
+/* slider handle */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: black;
+    cursor: pointer;
+}
+
+/* slider handle for firefox */
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: black;
+    cursor: pointer;
+}
+
+/* Checkboxes */
+/* Create a custom checkbox */
+.checkbox__container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.float__right {
+    float: right;
+    margin-right: 35px;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox__container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox__container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox__container input:checked ~ .checkmark {
+    background-color: black;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox__container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox__container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #50b818;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.fuck__css {
+    width: 100%;
+    height: 25px;
+    margin: auto;
+    padding: 10px;
+}
