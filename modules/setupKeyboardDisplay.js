@@ -1,3 +1,5 @@
+import highlightKeysWhenTyping from './highlightKeysWhenTyping.js';
+
 //displays all the keys from the keyboard on the screen
 //as span elements inside the keyboard div
 const setupKeyboardDisplay = ({ keyboard, offsets }) => {
@@ -61,6 +63,8 @@ const setupKeyboardDisplay = ({ keyboard, offsets }) => {
         }
         keyboardDiv.appendChild(thisRowDiv);
     });
+
+    highlightKeysWhenTyping(keyboard);
 };
 
 export default setupKeyboardDisplay;
