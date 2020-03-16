@@ -161,6 +161,8 @@ const displayOutputAtIndex = ({
             prev.mistakes = mistakeKeys;
         }
     } else {
+        arrowSpan.style.color = '#39ff14';
+
         //no mistake was made
         //if there are result characters
         !!resultCharacters &&

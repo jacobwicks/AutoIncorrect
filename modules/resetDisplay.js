@@ -24,6 +24,9 @@ const resetDisplay = ({ display, inputString, keyboard, prev }) => {
         currentInputSpan.innerHTML = '&nbsp';
         currentOutputSpan.innerHTML = '&nbsp';
 
+        //and the display arrow
+        arrowSpan.style.color = null;
+
         //clear cursor from input box
         //by calling highlightInputAt with no index
         highlightInputAt({
@@ -41,8 +44,6 @@ const resetDisplay = ({ display, inputString, keyboard, prev }) => {
                 mistakeKey =>
                     mistakeKey && mistakeKey.classList.remove('mistake')
             );
-            //and the display arrow
-            arrowSpan.style.color = null;
         }
 
         //unpress the shift key
